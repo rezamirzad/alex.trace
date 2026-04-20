@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* High-contrast palette */
+  --foreground-rgb: 24, 24, 27; /* Zinc-900 */
+  --background-rgb: 255, 255, 255;
+
+  /* Syntax Highlighting Palette */
+  --code-keyword: #d946ef; /* Fuchsia */
+  --code-function: #3b82f6; /* Blue */
+  --code-string: #10b981; /* Emerald */
+  --code-comment: #94a3b8; /* Slate */
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  body {
+    @apply text-zinc-900 antialiased font-sans;
+    background-color: rgb(var(--background-rgb));
+
+    /* Technical blue-tinted dot-grid background */
+    background-image: radial-gradient(
+      rgba(59, 130, 246, 0.1) 1px,
+      transparent 1px
+    );
+    background-size: 24px 24px;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply tracking-tighter text-black;
+  }
+}
+
+@layer components {
+  /* Trace Component Library: Clean, Sharp, Editorial */
+
+  .btn-primary {
+    @apply px-10 py-5 bg-black text-white hover:bg-blue-600 transition-all 
+           duration-300 text-[10px] font-black uppercase tracking-[0.2em] shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply px-10 py-5 border border-zinc-200 text-zinc-900 hover:bg-zinc-50 
+           transition-all text-[10px] font-black uppercase tracking-[0.2em];
+  }
+
+  /* Code-inspired Card with subtle blue shadow */
+  .glass-card {
+    @apply bg-white border border-zinc-100 p-8 rounded-sm shadow-[10px_10px_0px_0px_rgba(59,130,246,0.03)];
+  }
+
+  /* Status lozenges used in the UI */
+  .lozenge {
+    @apply inline-flex items-center px-3 py-1 bg-blue-50 border border-blue-100 
+           text-[9px] font-mono font-bold text-blue-600 rounded-full lowercase;
+  }
+
+  .badge-success {
+    @apply inline-flex items-center gap-2 text-sm font-mono font-bold uppercase 
+           tracking-tight text-black;
+  }
+
+  /* Outcome highlight boxes using 'Emerald' syntax color */
+  .code-block-decor {
+    @apply bg-emerald-50/50 p-6 border-l-2 border-emerald-500 font-mono text-sm;
+  }
+
+  /* Custom scrollbar for a technical drafting feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-200 rounded-full hover:bg-blue-200 transition-colors;
+  }
+}
+
+/* Typography Overrides for the Editorial Look */
+.italic-header {
+  @apply italic font-bold tracking-tighter;
+}
+
+.line-number {
+  @apply text-[10px] font-mono text-zinc-200 select-none;
+}
+
+/* Syntax Highlighting Utilities */
+.syntax-keyword {
+  color: var(--code-keyword);
+}
+.syntax-function {
+  color: var(--code-function);
+}
+.syntax-string {
+  color: var(--code-string);
+}
+.syntax-comment {
+  color: var(--code-comment);
+}
