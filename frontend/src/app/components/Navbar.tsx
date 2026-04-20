@@ -33,8 +33,9 @@ export default function Navbar({
           <span className="text-zinc-300 font-mono not-italic">]</span>
         </div>
 
-        <div className="flex items-center gap-10">
-          <div className="hidden md:flex gap-8">
+        <div className="flex items-center gap-6 md:gap-10">
+          {/* Changed 'hidden md:flex' to 'flex' and adjusted gap for mobile */}
+          <div className="flex gap-4 md:gap-8">
             {views.map((v) => (
               <button
                 key={v.id}
@@ -53,7 +54,7 @@ export default function Navbar({
             ))}
           </div>
 
-          <div className="flex gap-3 border-l border-zinc-200 pl-8">
+          <div className="flex gap-3 border-l border-zinc-200 pl-4 md:pl-8">
             {(["en", "fr"] as Language[]).map((l) => (
               <button
                 key={l}
