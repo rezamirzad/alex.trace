@@ -10,17 +10,15 @@ export default function Profile({ t }: { t: TranslationContent }) {
             {t.hero.location}
           </span>
         </div>
-        <span className="text-[10px] font-mono text-zinc-300 font-bold">
-          v2.0.4 // PRODUCTION
-        </span>
+        <span className="text-[10px] font-mono text-zinc-300 font-bold"></span>
       </div>
 
       <h1 className="text-7xl md:text-9xl font-bold text-black mb-16 italic leading-[0.8] hover:text-blue-600 transition-colors cursor-default">
         {t.hero.name}
       </h1>
 
-      <div className="flex flex-col lg:flex-row gap-20 items-start">
-        <div className="lg:w-3/5">
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+        <div className="lg:w-3/5 w-full flex flex-col">
           <div className="relative p-8 border border-zinc-100 bg-white shadow-[20px_20px_0px_0px_rgba(59,130,246,0.05)]">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-fuchsia-500 to-emerald-500"></div>
             <p className="text-2xl md:text-3xl font-medium text-zinc-800 leading-tight">
@@ -28,11 +26,12 @@ export default function Profile({ t }: { t: TranslationContent }) {
             </p>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-6">
+          {/* Moved Download Button: Full width on mobile, auto width on desktop */}
+          <div className="mt-8 lg:mt-12">
             <a
               href={`/${t.hero.cvFilename}`}
               download={t.hero.cvFilename}
-              className="text-[10px] font-black uppercase tracking-[0.2em] px-10 py-5 bg-black text-white hover:bg-blue-600 transition-all shadow-xl flex items-center gap-4"
+              className="text-[10px] font-black uppercase tracking-[0.2em] px-10 py-5 bg-black text-white hover:bg-blue-600 transition-all shadow-xl flex items-center justify-center md:justify-start md:inline-flex gap-4 w-full md:w-auto"
             >
               {t.buttons.downloadCv}
               <span className="opacity-50">.PDF</span>
