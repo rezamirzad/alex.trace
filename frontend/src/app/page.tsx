@@ -53,9 +53,6 @@ export default function Home() {
         <p className="text-[9px] uppercase tracking-[0.4em] text-zinc-300 font-bold">
           {t.rights}
         </p>
-        <p className="text-[9px] uppercase tracking-[0.4em] text-zinc-300 font-bold">
-          Built with Next.js 14
-        </p>
       </footer>
     </div>
   );
